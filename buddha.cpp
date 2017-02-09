@@ -8,13 +8,28 @@
 #include <curl/curl.h>
 using namespace std;
 void printBuddha();
-void qotd();
+void quoteoftheDay();
 void displayMenu();
+void timer();
 int main(void)
 {	int selection;
 	printBuddha();
-	qotd();
+	quoteoftheDay();
 	displayMenu();
+
+	while(1)
+	{
+		cin >> selection;
+		if(selection == 1 )
+		{
+			printBuddha();
+			displayMenu();
+		}
+		else if(selection == 2)
+		{
+			return 0;
+		}
+	}
 }
 
 void printBuddha()
@@ -32,7 +47,7 @@ void printBuddha()
 	cout<<endl;
 }
 //First time using CURL
-void qotd()
+void quoteoftheDay()
 {
 	CURL * curl;
 	CURLcode res;
